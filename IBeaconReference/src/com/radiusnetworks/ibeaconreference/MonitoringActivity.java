@@ -42,7 +42,7 @@ public class MonitoringActivity extends Activity implements IBeaconConsumer  {
 		this.startActivity(myIntent);
 	}
 	public void onBackgroundClicked(View view) {
-		Intent myIntent = new Intent(this, MonitoringService.class);
+		Intent myIntent = new Intent(this, ScheduleAlarm.class);
 		this.startService(myIntent);
 	}
 

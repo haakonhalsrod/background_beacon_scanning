@@ -49,6 +49,10 @@
         </service>
         
         <service
+            android:name="com.radiusnetworks.ibeaconreference.ScheduleAlarm">
+        </service>
+        
+        <service
             android:name="org.eclipse.paho.android.service.MqttService">
         </service>
         
@@ -58,11 +62,7 @@
         
         <receiver
             android:name="com.radiusnetworks.ibeaconreference.MyAlarmReceiver"
-            android:process=":remote" >
-        </receiver>
-        
-        <receiver
-            android:name="com.radiusnetworks.ibeaconreference.OnBootReceiver">
+            android:process=":remote">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
