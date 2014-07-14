@@ -13,22 +13,16 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttSecurityException;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.app.IntentService;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-
 import com.radiusnetworks.ibeacon.IBeacon;
 import com.radiusnetworks.ibeacon.IBeaconConsumer;
 import com.radiusnetworks.ibeacon.IBeaconManager;
@@ -316,32 +310,6 @@ public class MonitoringService extends IntentService implements IBeaconConsumer{
 			e.printStackTrace();
 		}
     }
-    /*@Override 
-    protected void onPause() {
-    	super.onPause();
-    	if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(this, true);    	
-    	try {
-    		if(androidClient != null && androidClient.isConnected())
-    			androidClient.disconnect();
-		} catch (MqttException e) {
-			e.printStackTrace();
-		}
-    }*/
-    
-    /*@Override 
-    protected void onResume() {
-    	super.onResume();
-    	if (iBeaconManager.isBound(this)) iBeaconManager.setBackgroundMode(this, false);
-    	try {
-    		MqttConnectOptions conOpt = new MqttConnectOptions();
-	    	conOpt.setKeepAliveInterval(240000);
-	    	if(androidClient != null)
-	    		androidClient.connect();
-		} catch (MqttException e) {
-			e.printStackTrace();
-		}    	
-    	
-    } */   
     
 //    private void logToDisplay(final String line) {
 //    	runOnUiThread(new Runnable() {

@@ -4,7 +4,6 @@ import com.radiusnetworks.ibeacon.IBeaconConsumer;
 import com.radiusnetworks.ibeacon.IBeaconManager;
 import com.radiusnetworks.ibeacon.MonitorNotifier;
 import com.radiusnetworks.ibeacon.Region;
-import com.radiusnetworks.ibeacon.TimedBeaconSimulator;
 
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -29,7 +28,7 @@ public class MonitoringActivity extends Activity implements IBeaconConsumer  {
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_monitoring);
-		verifyBluetooth();
+//		verifyBluetooth();
 //	    iBeaconManager.bind(this);			
 //	    
 //		//initializing simulated iBeacons
@@ -38,8 +37,8 @@ public class MonitoringActivity extends Activity implements IBeaconConsumer  {
 		}
 	
 	public void onRangingClicked(View view) {
-		Intent myIntent = new Intent(this, RangingActivity.class);
-		this.startActivity(myIntent);
+		Intent myIntent = new Intent(this, MonitoringService.class);
+		this.startService(myIntent);
 	}
 	public void onBackgroundClicked(View view) {
 		Intent myIntent = new Intent(this, ScheduleAlarm.class);
