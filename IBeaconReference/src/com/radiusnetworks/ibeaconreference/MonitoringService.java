@@ -23,6 +23,7 @@ import android.net.wifi.WifiManager;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
+
 import com.radiusnetworks.ibeacon.IBeacon;
 import com.radiusnetworks.ibeacon.IBeaconConsumer;
 import com.radiusnetworks.ibeacon.IBeaconManager;
@@ -300,7 +301,7 @@ public class MonitoringService extends IntentService implements IBeaconConsumer{
 	public void onDestroy() {
         super.onDestroy();
         iBeaconManager.unBind(this);
-        alertedBeacons = new ArrayList<IBeacon>();
+        /*alertedBeacons = new ArrayList<IBeacon>();
         try {
         	if(androidClient != null && androidClient.isConnected()) {
 	        	androidClient.disconnect();
@@ -308,7 +309,7 @@ public class MonitoringService extends IntentService implements IBeaconConsumer{
         	}
 		} catch (MqttException e) {
 			e.printStackTrace();
-		}
+		}*/
     }
     
 //    private void logToDisplay(final String line) {
